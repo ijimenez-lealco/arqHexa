@@ -3,5 +3,6 @@
 export interface IProducto {
     id:number;
     nombre:string;
-    precio:number
+    precio:number;
+    img:string
 }

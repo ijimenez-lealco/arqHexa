@@ -5,10 +5,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { IGetProductos } from 'src/app/domain/servicios/IGetProductos';
 import { GetProductosLocalService } from '../../servicios/getProductosLocal/get-productos-local.service';
 import { GetProductosStrapiService } from '../../servicios/getProductosStrapi/get-productos-strapi.service';
+import { HomeComponent } from './componentes/layout/home.component';
+import { CardComponent } from './componentes/card/card.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent,
+    CardComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule
@@ -16,7 +21,7 @@ import { GetProductosStrapiService } from '../../servicios/getProductosStrapi/ge
   providers:[
     {
       provide:IGetProductos,
-      useClass:GetProductosStrapiService
+      useClass:GetProductosLocalService
     }
   ]
 })
