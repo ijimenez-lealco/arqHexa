@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap,map } from 'rxjs';
 import { IProducto } from 'src/app/domain/modelos/Iproduct';
 import { IGetProductos } from 'src/app/domain/servicios/IGetProductos';
 
@@ -30,10 +30,19 @@ export class GetProductosLocalService implements IGetProductos {
 
 
   constructor() { }
+
   public getAllProductos(): Observable<IProducto[]> {
     return of(this.data)
   }
-  public getProductobyId(id:number): Observable<IProducto> {
-    throw new Error('Method not implemented.');
+
+//TODO REVISAR ESTA ESTRUCTURA PORQUE ESTOY PERDIDA
+  public getProductobyId(id:string): Observable<IProducto> {
+    const idNumber = parseInt(id)
+    console.log(id)
+    return this.getAllProductos().pipe(
+      map((productos:IProducto[])=> productos.find((producto:IProducto)=> producto.id === idNumber)
+      ),
+      tap(console.log)
+    )
   }
 }

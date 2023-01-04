@@ -7,7 +7,7 @@ import { GetProductosLocalService } from '../../servicios/getProductosLocal/get-
 import { GetProductosStrapiService } from '../../servicios/getProductosStrapi/get-productos-strapi.service';
 import { HomeComponent } from './componentes/layout/home.component';
 import { CardComponent } from './componentes/card/card.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { CardComponent } from './componentes/card/card.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[
     {

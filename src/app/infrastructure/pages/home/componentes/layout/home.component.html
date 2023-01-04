@@ -1,4 +1,18 @@
-<h2> Producto</h2>
+
+<h2>Buscar producto id</h2>
+
+<form [formGroup]="searchProduct" (ngSubmit)="onSearch()" class="formulario">
+    <div class="formulario-input">
+        <label for="">Id:</label>
+        <input type="text" formControlName="id" placeholder="Nombre Producto">
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+<div class="c-cards">
+    <app-card *ngIf='productFound' [producto]="productFound"></app-card>
+</div>
+
+<h2> Productos</h2>
 <div class="c-cards">
     <app-card *ngFor='let producto of productos'[producto]="producto"></app-card>
 </div>

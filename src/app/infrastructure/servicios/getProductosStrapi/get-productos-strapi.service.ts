@@ -22,7 +22,7 @@ export class GetProductosStrapiService implements IGetProductos {
     )
     
   }
-  public getProductobyId(id: number): Observable<IProducto> {
+  public getProductobyId(id: string): Observable<IProducto> {
     throw new Error('Method not implemented.');
   }
 }
