@@ -23,6 +23,11 @@ export class GetProductosStrapiService implements IGetProductos {
     
   }
   public getProductobyId(id: string): Observable<IProducto> {
-    throw new Error('Method not implemented.');
+    const idNumber = parseInt(id)
+    return this.getAllProductos().pipe(
+      tap(console.log),
+      map((products:IProducto[])=> products.find((product:IProducto)=> product.id === idNumber)),
+      tap(console.log)
+    )
   }
 }

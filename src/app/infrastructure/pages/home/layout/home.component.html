@@ -9,8 +9,10 @@
     <button type="submit">Enviar</button>
 </form>
 <div class="c-cards">
-    <app-card *ngIf='productFound' [producto]="productFound"></app-card>
+    <app-card *ngIf='productFound;else notProduct' [producto]="productFound"></app-card>
 </div>
+
+<ng-template #notProduct> El producto no se encuentra disponible</ng-template>
 
 <h2> Productos</h2>
 <div class="c-cards">

@@ -38,7 +38,6 @@ export class GetProductosLocalService implements IGetProductos {
 //TODO REVISAR ESTA ESTRUCTURA PORQUE ESTOY PERDIDA
   public getProductobyId(id:string): Observable<IProducto> {
     const idNumber = parseInt(id)
-    console.log(id)
     return this.getAllProductos().pipe(
       map((productos:IProducto[])=> productos.find((producto:IProducto)=> producto.id === idNumber)
       ),

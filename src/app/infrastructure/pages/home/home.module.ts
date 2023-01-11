@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { IGetProductos } from 'src/app/domain/servicios/IGetProductos';
 import { GetProductosLocalService } from '../../servicios/getProductosLocal/get-productos-local.service';
 import { GetProductosStrapiService } from '../../servicios/getProductosStrapi/get-productos-strapi.service';
-import { HomeComponent } from './componentes/layout/home.component';
+import { HomeComponent } from './layout/home.component';
 import { CardComponent } from './componentes/card/card.component';
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -22,7 +22,7 @@ import { ReactiveFormsModule } from "@angular/forms";
   providers:[
     {
       provide:IGetProductos,
-      useClass:GetProductosLocalService
+      useClass:GetProductosStrapiService
     }
   ]
 })
